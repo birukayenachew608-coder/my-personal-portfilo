@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biruk Ayenachew | Portfolio</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind theme config + page scripts (must come right after the Tailwind CDN) -->
+    <script src="script.js"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b-0 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-code text-primary"></i> Biruk
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-primary transition">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-primary transition">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-primary transition">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-primary transition">Projects</a>
+                <a href="#contact" class="bg-primary text-darkBg font-semibold px-5 py-2 rounded-full hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                    Contact Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" aria-label="Toggle menu" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card absolute w-full left-0 top-full flex flex-col space-y-4 p-6 border-t border-gray-700">
+            <a href="#home" class="text-gray-300 hover:text-primary transition">Home</a>
+            <a href="#about" class="text-gray-300 hover:text-primary transition">About</a>
+            <a href="#skills" class="text-gray-300 hover:text-primary transition">Skills</a>
+            <a href="#projects" class="text-gray-300 hover:text-primary transition">Projects</a>
+            <a href="#contact" class="text-primary font-semibold">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Top Left Glow -->
+        <div class="glow-circle top-20 left-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Left Text Content -->
+            <div class="space-y-6 text-center lg:text-left">
+                <h3 class="text-2xl font-medium text-gray-400">Hi, I'm</h3>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    <span class="text-white">Biruk</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-300">Ayenachew</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-300 font-light border-b border-gray-700 pb-4 inline-block">
+                    Full-Stack Developer | Aspiring AI Engineer
+                </h2>
+                <p class="text-gray-400 max-w-lg mx-auto lg:mx-0 pt-2">
+I design and build secure, end-to-end web applications with Node.js, React, and MySQL, while advancing into AI engineering through Python and machine learning.                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#projects" class="bg-primary text-darkBg font-bold px-8 py-3 rounded-full hover:bg-yellow-500 transition shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                        View My Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Content -->
+            <div class="relative flex justify-center lg:justify-end items-center mt-10 lg:mt-0 pb-12">
+                <!-- Decorative background elements -->
+                <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-primary rounded-full right-0 lg:-right-10 top-0 opacity-20 blur-3xl z-0"></div>
+                <div class="absolute w-64 h-64 md:w-[400px] md:h-[400px] dotted-bg rounded-full z-0 translate-x-4 translate-y-4 opacity-50"></div>
+
+                <!-- Profile Image Container -->
+                <div class="profile-avatar relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary p-2 bg-darkBg shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                    <span id="profile-avatar-fallback" class="absolute inset-2 rounded-full bg-cardBg flex items-center justify-center text-primary text-5xl md:text-7xl font-bold" aria-hidden="true">BA</span>
+                    <img id="profile-avatar-image" src="./assets/profile.jpg" alt="Biruk Ayenachew" class="relative z-10 w-full h-full object-cover object-top rounded-full">
+                </div>
+
+                <!-- Floating Badges -->
+                <div class="absolute top-10 left-0 md:-left-10 glass-card p-3 rounded-xl shadow-lg border border-gray-600 animate-bounce bounce-slow">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-brands fa-python text-blue-400 text-2xl"></i>
+                        <span class="text-sm font-semibold">Python</span>
+                    </div>
+                </div>
+                <div class="absolute hero-js-badge glass-card p-3 rounded-xl shadow-lg border border-gray-600 animate-bounce bounce-slower">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-brands fa-js text-yellow-400 text-xl"></i>
+                        <span class="text-sm font-semibold">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cardBg/30 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Who <span class="text-primary">Am I?</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-10 rounded-full"></div>
+
+            <p class="text-gray-300 leading-relaxed text-lg mb-8">
+                I am a 21-year-old Information Systems and Technology undergraduate at Debre Berhan University (AI stream).
+            </p>
+            <p class="text-gray-300 leading-relaxed text-lg mb-8">
+                I specialize in building secure full-stack applications with Node.js and MySQL, and I am currently focused on Python (OOP) and machine learning foundations to become an AI Engineer.
+            </p>
+            <div id="more-about-content" hidden>
+                <p class="text-gray-300 leading-relaxed text-lg mb-8">
+                    Beyond the classroom, I graduated from the 5th Round INSA Summer Camp, where I served as Lead Backend Architect and Security Lead on a collaborative full-stack project. That experience sharpened my ability to design reliable APIs, structure relational databases, and implement practical application security under real-world deadlines.
+                </p>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Driven by a deep passion for Artificial Intelligence and Robotics, I enjoy bridging software engineering with intelligent systems—from exploring how autonomous machines interact with the physical world to building data-driven applications that solve everyday problems.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <button id="toggle-more-about" type="button" aria-expanded="false" aria-controls="more-about-content" class="inline-block bg-transparent border border-primary text-primary px-6 py-2 rounded-full hover:bg-primary hover:text-darkBg transition font-semibold">
+                    More About Me
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <!-- Right Glow -->
+        <div class="glow-circle top-1/2 right-0"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">My <span class="text-primary">Skills</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-16 rounded-full"></div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Skill 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-brands fa-node-js text-5xl text-green-500"></i>
+                    <h3 class="font-semibold text-lg">Node.js</h3>
+                </div>
+                <!-- Skill 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-solid fa-server text-5xl text-gray-300"></i>
+                    <h3 class="font-semibold text-lg">Express</h3>
+                </div>
+                <!-- Skill 3 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-brands fa-python text-5xl text-yellow-400"></i>
+                    <h3 class="font-semibold text-lg text-center">Python (OOP)</h3>
+                </div>
+                <!-- Skill 4 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-solid fa-database text-5xl text-cyan-400"></i>
+                    <h3 class="font-semibold text-lg text-center">MySQL &amp; Cloud DB</h3>
+                </div>
+                <!-- Skill 5 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-brands fa-js text-5xl text-yellow-400"></i>
+                    <h3 class="font-semibold text-lg">JavaScript</h3>
+                </div>
+                <!-- Skill 6: Learning -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover-lift">
+                    <i class="fa-brands fa-react text-5xl text-cyan-400"></i>
+                    <div class="text-center">
+                        <h3 class="font-semibold text-lg">React</h3>
+                        <span class="mt-1 inline-block text-xs font-medium text-primary/80 uppercase tracking-wider">Learning</span>
+                    </div>
+                </div>
+                <!-- Skill 7 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-brands fa-html5 text-5xl text-orange-500"></i>
+                    <h3 class="font-semibold text-lg">HTML5/CSS3</h3>
+                </div>
+                <!-- Skill 8 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift">
+                    <i class="fa-solid fa-shield-halved text-5xl text-orange-600"></i>
+                    <h3 class="font-semibold text-lg text-center">JWT &amp; Auth Security</h3>
+                </div>
+                <!-- AI Stream card -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover-lift lg:col-span-2 bg-gradient-to-br from-primary/10 via-cardBg/80 to-cyan-400/5 border border-primary/20 shadow-[0_0_24px_rgba(245,158,11,0.08)]">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold text-primary mb-1">AI Stream</h2>
+                        <p class="text-gray-300 font-medium">Debre Berhan University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-cardBg/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">My <span class="text-primary">Projects</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-16 rounded-full"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+                    <a href="https://joblink-ethiopia.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open JobLink Ethiopia live demo" class="block">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://placehold.co/600x400/0f172a/f59e0b?text=JobLink+Ethiopia" alt="JobLink Ethiopia" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">JobLink Ethiopia</h3>
+                            <p class="text-gray-400 text-sm mb-4">An INSA summer camp project where I served as Lead Backend Architect &amp; Security, built with Node.js and an Aiven-hosted MySQL database, secured with OAuth and JWT.</p>
+                            <div class="flex flex-wrap gap-2 text-xs text-primary">
+                                <span class="bg-primary/10 px-2 py-1 rounded">Node.js</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">MySQL (Aiven)</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">OAuth</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">JWT</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="px-6 pb-6 flex flex-wrap gap-3">
+                        <a href="https://joblink-ethiopia.onrender.com/" target="_blank" rel="noopener noreferrer" class="bg-primary text-darkBg px-4 py-2 rounded-full font-semibold">Live Demo</a>
+                        <a href="https://github.com/birukayenachew608-coder/Two-month-progect" target="_blank" rel="noopener noreferrer" class="border border-primary text-primary px-4 py-2 rounded-full font-semibold">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+                    <a href="https://github.com/birukayenachew608-coder/expense-tracker-and-login-form" target="_blank" rel="noopener noreferrer" aria-label="Open Personal Expense Tracker on GitHub" class="block">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://placehold.co/600x400/0f172a/f59e0b?text=Expense+Tracker" alt="Personal Expense Tracker" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Personal Expense Tracker</h3>
+                            <p class="text-gray-400 text-sm mb-4">A full-stack application for managing finances securely, featuring custom REST APIs.</p>
+                            <div class="flex flex-wrap gap-2 text-xs text-primary">
+                                <span class="bg-primary/10 px-2 py-1 rounded">Full-Stack</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">REST APIs</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">Security</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="px-6 pb-6">
+                        <a href="https://github.com/birukayenachew608-coder/expense-tracker-and-login-form" target="_blank" rel="noopener noreferrer" class="bg-primary text-darkBg px-4 py-2 rounded-full font-semibold">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+                    <a href="https://github.com/birukayenachew608-coder/circute-lab-electronics" target="_blank" rel="noopener noreferrer" aria-label="Open Circuit Lab Electronics on GitHub" class="block">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://placehold.co/600x400/0f172a/f59e0b?text=Circuit+Lab" alt="Circuit Lab Electronics" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Circuit Lab Electronics</h3>
+                            <p class="text-gray-400 text-sm mb-4">A highly responsive electronic product catalog and shopping cart frontend interface.</p>
+                            <div class="flex flex-wrap gap-2 text-xs text-primary">
+                                <span class="bg-primary/10 px-2 py-1 rounded">HTML/CSS</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">JavaScript</span>
+                                <span class="bg-primary/10 px-2 py-1 rounded">Responsive UI</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="px-6 pb-6">
+                        <a href="https://github.com/birukayenachew608-coder/circute-lab-electronics" target="_blank" rel="noopener noreferrer" class="bg-primary text-darkBg px-4 py-2 rounded-full font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <!-- Left Glow -->
+        <div class="glow-circle bottom-0 left-0"></div>
+
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary rounded-full opacity-10 blur-3xl"></div>
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-2">Let's Have a <span class="text-primary">Chat</span></h2>
+                <p class="text-center text-gray-400 mb-10">Feel free to reach out for collaborations or just a friendly hello!</p>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <input id="senderName" type="text" name="name" placeholder="Your Name" required class="w-full bg-darkBg/50 border border-gray-600 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition placeholder-gray-500">
+                        </div>
+                        <div>
+                            <input id="senderEmail" type="email" name="email" placeholder="Email Address" required class="w-full bg-darkBg/50 border border-gray-600 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition placeholder-gray-500">
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="senderMessage" rows="5" name="message" placeholder="Chat here..." required class="w-full bg-darkBg/50 border border-gray-600 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition placeholder-gray-500 resize-none"></textarea>
+                    </div>
+                    <!-- Contact status (filled in by script.js) -->
+                    <p id="chatStatus" role="status" aria-live="polite" hidden class="hidden text-center text-sm font-medium rounded-xl px-4 py-3"></p>
+                    <button id="submitChatBtn" type="submit" class="w-full bg-primary text-darkBg font-bold text-lg py-4 rounded-xl hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(245,158,11,0.4)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-primary">
+                        Submit Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cardBg py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-primary text-xl"></i>
+                <span class="font-bold text-lg">Biruk Ayenachew</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="https://github.com/birukayenachew608-coder" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <div class="text-gray-500 text-sm text-center md:text-right">
+                <p>&copy; 2026 Created By @birukayenachew608-coder.</p>
+                <p>All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
